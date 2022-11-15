@@ -2,28 +2,28 @@ export default function(taggedOps, phrase) {
   return taggedOps.filter(
     (tagObj, tag) => {
       const operations = tagObj.get("operations")
-      let is_tag_operation_filtered = false
-      const is_tag_filtered = tag.includes(phrase.toLowerCase())
+      let isTaggedOpsFiltered = false
+      const isTagFiltered = tag.includes(phrase.toLowerCase())
 
       operations.filter(operation => {
         let operation_detail = operation.get("operation")
 
-        const is_path_filtered = operation.get("path").toLowerCase().includes(phrase.toLowerCase())
-        const is_id_filtered = operation.get("id").toLowerCase().includes(phrase.toLowerCase())
-        const is_summary_filtered = operation_detail.get("summary").toLowerCase().includes(phrase.toLowerCase())
-        const is_operationId_filtered = operation_detail.get("operationId").toLowerCase().includes(phrase.toLowerCase())
+        console.log(operation_detail)
 
-        let is_operation_filtered = (
-          is_path_filtered || is_id_filtered || is_summary_filtered || is_operationId_filtered
+        const isPathFiltered = operation.get("path").toLowerCase().includes(phrase.toLowerCase())
+        const isIdFiltered = operation.get("id").toLowerCase().includes(phrase.toLowerCase())
+        const isOperationIdFiltered = operation_detail.get("operationId").toLowerCase().includes(phrase.toLowerCase())
+
+        let isOperationFiltered = (
+          isPathFiltered || isIdFiltered || isOperationIdFiltered
         )
 
-        is_tag_operation_filtered ||= is_operation_filtered
+        isTaggedOpsFiltered ||= isOperationFiltered
 
-        return is_operation_filtered
+        return isOperationFiltered
       })
 
-      return is_tag_operation_filtered || is_tag_filtered
+      return isTaggedOpsFiltered || isTagFiltered
     }
-
   )
 }
