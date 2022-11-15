@@ -32,7 +32,7 @@ export default class FilterContainer extends React.Component {
         {filter === null || filter === false || filter === "false" ? null :
           <div className="filter-container">
             <Col className="filter wrapper" mobile={12}>
-              <input className={classNames.join(" ")} placeholder="태그, URL 을 입력해주세요." type="text"
+              <input className={classNames.join(" ")} placeholder="태그 또는 URL을 입력해주세요." type="text"
                      onChange={this.onFilterChange} value={filter === true || filter === "true" ? "" : filter}
                      disabled={isLoading}/>
             </Col>
