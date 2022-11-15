@@ -33,13 +33,13 @@ export default class Operations extends React.Component {
     const taggedOps = specSelectors.taggedOperations()
 
     if(taggedOps.size === 0) {
-      return <h3> No operations defined in spec!</h3>
+      return <h3>해당하는 API가 존재하지 않습니다.</h3>
     }
 
     return (
       <div>
         { taggedOps.map(this.renderOperationTag).toArray() }
-        { taggedOps.size < 1 ? <h3> No operations defined in spec! </h3> : null }
+        { taggedOps.size < 1 ? <h3> 해당하는 API가 존재하지 않습니다. </h3> : null }
       </div>
     )
   }

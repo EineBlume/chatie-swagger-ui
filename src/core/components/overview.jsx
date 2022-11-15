@@ -67,7 +67,7 @@ export default class Overview extends React.Component {
             }).toArray()
           }
 
-          { taggedOps.size < 1 && <h3> No operations defined in spec! </h3> }
+          { taggedOps.size < 1 && <h3> 해당하는 API가 존재하지 않습니다. </h3> }
         </div>
     )
   }
