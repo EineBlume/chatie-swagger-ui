@@ -8,8 +8,6 @@ export default function(taggedOps, phrase) {
       operations.filter(operation => {
         let operation_detail = operation.get("operation")
 
-        console.log(operation_detail)
-
         const isPathFiltered = operation.get("path").toLowerCase().includes(phrase.toLowerCase())
         const isIdFiltered = operation.get("id").toLowerCase().includes(phrase.toLowerCase())
         const isOperationIdFiltered = operation_detail.get("operationId").toLowerCase().includes(phrase.toLowerCase())
