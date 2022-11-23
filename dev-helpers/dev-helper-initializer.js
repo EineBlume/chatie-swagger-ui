@@ -4,7 +4,7 @@ window.onload = function() {
   window["SwaggerUIStandalonePreset"] = window["swagger-ui-standalone-preset"]
   // Build a system
   const ui = SwaggerUIBundle({
-    url: "https://petstore.swagger.io/v2/swagger.json",
+    url: "http://127.0.0.1:3000/api/docs/v2/schema",
     dom_id: "#swagger-ui",
     presets: [
       SwaggerUIBundle.presets.apis,
