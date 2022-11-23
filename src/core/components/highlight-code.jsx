@@ -47,7 +47,7 @@ const HighlightCode = ({value, fileName, className, downloadable, getConfigs, ca
     <div className="highlight-code" ref={rootRef}>
       {!downloadable ? null :
         <div className="download-contents" onClick={handleDownload}>
-          Download
+          다운로드
         </div>
       }
 

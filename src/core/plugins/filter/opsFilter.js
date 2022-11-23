@@ -1,16 +1,16 @@
 export default function(taggedOps, phrase) {
-  return taggedOps.filter(
+  let filteredTaggedOps = taggedOps.map(
     (tagObj, tag) => {
-      const operations = tagObj.get("operations")
+      let operations = tagObj.get("operations")
       let isTaggedOpsFiltered = false
-      const isTagFiltered = tag.includes(phrase.toLowerCase())
+      const isTagFiltered = tag.includes(phrase)
 
-      operations.filter(operation => {
+      const filteredOperations = operations.map(operation => {
         let operation_detail = operation.get("operation")
 
-        const isPathFiltered = operation.get("path").toLowerCase().includes(phrase.toLowerCase())
-        const isIdFiltered = operation.get("id").toLowerCase().includes(phrase.toLowerCase())
-        const isOperationIdFiltered = operation_detail.get("operationId").toLowerCase().includes(phrase.toLowerCase())
+        const isPathFiltered = operation.get("path").includes(phrase)
+        const isIdFiltered = operation.get("id").includes(phrase)
+        const isOperationIdFiltered = operation_detail.get("operationId").includes(phrase)
 
         let isOperationFiltered = (
           isPathFiltered || isIdFiltered || isOperationIdFiltered
@@ -18,10 +18,17 @@ export default function(taggedOps, phrase) {
 
         isTaggedOpsFiltered ||= isOperationFiltered
 
-        return isOperationFiltered
-      })
+        return isOperationFiltered ? operation : null
+      }).filter(operation => operation !== null)
 
-      return isTaggedOpsFiltered || isTagFiltered
+
+      tagObj = tagObj.set("operations", filteredOperations)
+
+      return (isTaggedOpsFiltered || isTagFiltered) ? tagObj : null
     }
   )
+
+  filteredTaggedOps = filteredTaggedOps.filter(tagObj => tagObj !== null)
+
+  return filteredTaggedOps
 }
