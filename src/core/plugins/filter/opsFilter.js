@@ -11,14 +11,12 @@ export default function(taggedOps, phrase) {
         const isPathFiltered = operation.get("path").indexOf(phrase) !== -1
         const isIdFiltered = operation.get("id").indexOf(phrase) !== -1
 
-        let operationId = operation_detail.get("operationId")
-
-        if (operationId === '_____1') {
-          operationId = operation_detail.get("__originalOperationId")
+        let operationId = operation_detail.get("__originalOperationId")
+        if (operationId === undefined) {
+          operationId = operation_detail.get("operationId")
         }
+
         const isOperationIdFiltered = operationId.indexOf(phrase) !== -1
-
-
 
         let isOperationFiltered = (
           isPathFiltered || isIdFiltered || isOperationIdFiltered
