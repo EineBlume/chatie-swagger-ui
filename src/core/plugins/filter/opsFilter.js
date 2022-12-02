@@ -27,7 +27,9 @@ export default function(taggedOps, phrase) {
         return isOperationFiltered ? operation : null
       }).filter(operation => operation !== null)
 
-      tagObj = tagObj.set("operations", filteredOperations)
+      if (isTaggedOpsFiltered) {
+        tagObj = tagObj.set("operations", filteredOperations)
+      }
 
       return (isTaggedOpsFiltered || isTagFiltered) ? tagObj : null
     }
