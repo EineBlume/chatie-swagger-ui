@@ -135,18 +135,18 @@ const RequestSnippets = ({ request, requestSnippetsSelectors, getConfigs }) => {
               })
             }
           </div>
-          <div className="copy-to-clipboard">
-            <CopyToClipboard text={snippet}>
-              <button />
-            </CopyToClipboard>
-          </div>
+          {/*<div className="copy-to-clipboard">*/}
+          {/*  <CopyToClipboard text={snippet}>*/}
+          {/*    <button />*/}
+          {/*  </CopyToClipboard>*/}
+          {/*</div>*/}
           <div>
             {SnippetComponent}
           </div>
         </div>
       }
     </div>
-  )  
+  )
 }
 
 RequestSnippets.propTypes = {

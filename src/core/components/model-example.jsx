@@ -80,7 +80,7 @@ export default class ModelExample extends React.Component {
               onClick={ this.activeTab }
               role="tab"
             >
-              {isExecute ? "Edit Value" : "Example Value"}
+              {isExecute ? "값 수정" : "응답"}
             </button>
           </li>
           { schema && (
@@ -94,7 +94,7 @@ export default class ModelExample extends React.Component {
                 onClick={ this.activeTab }
                 role="tab"
               >
-                {isOAS3 ? "Schema" : "Model" }
+                {isOAS3 ? "스키마" : "모델" }
               </button>
             </li>
           )}

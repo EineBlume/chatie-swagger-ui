@@ -27,7 +27,7 @@ export default function Example(props) {
       ) : null}
       {showValue && example.has("value") ? (
         <section className="example__section">
-          <div className="example__section-header">Example Value</div>
+          <div className="example__section-header">응답</div>
           <HighlightCode getConfigs={ getConfigs } value={stringify(example.get("value"))} />
         </section>
       ) : null}

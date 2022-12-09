@@ -126,7 +126,7 @@ export default class Responses extends React.Component {
               <tr className="responses-header">
                 <td className="col_header response-col_status">응답 코드</td>
                 <td className="col_header response-col_description">설명</td>
-                { specSelectors.isOAS3() ? <td className="col col_header response-col_links">Links</td> : null }
+                { specSelectors.isOAS3() ? <td className="col col_header response-col_links">링크들</td> : null }
               </tr>
             </thead>
             <tbody>

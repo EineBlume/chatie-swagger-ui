@@ -51,11 +51,11 @@ const HighlightCode = ({value, fileName, className, downloadable, getConfigs, ca
         </div>
       }
 
-      {canCopy && (
-        <div className="copy-to-clipboard">
-          <CopyToClipboard text={value}><button/></CopyToClipboard>
-        </div>
-      )}
+      {/*{canCopy && (*/}
+      {/*  <div className="copy-to-clipboard">*/}
+      {/*    <CopyToClipboard text={value}><button/></CopyToClipboard>*/}
+      {/*  </div>*/}
+      {/*)}*/}
 
       {canSyntaxHighlight
         ? <SyntaxHighlighter

@@ -5,7 +5,7 @@ import ModelComponent from "components/model-wrapper"
 
 describe("<ModelExample/>", function(){
   let components, props
-  
+
   let exampleSelectedTestInputs = [
     { defaultModelRendering: "model", isExecute: true },
     { defaultModelRendering: "example", isExecute: true },
@@ -13,7 +13,7 @@ describe("<ModelExample/>", function(){
     { defaultModelRendering: "othervalue", isExecute: true },
     { defaultModelRendering: "othervalue", isExecute: false }
   ]
-  
+
   let modelSelectedTestInputs = [
     { defaultModelRendering: "model", isExecute: false }
   ]
@@ -22,7 +22,7 @@ describe("<ModelExample/>", function(){
     components = {
       ModelWrapper: ModelComponent
     }
-    
+
     props = {
       getComponent: (c) => {
           return components[c]
@@ -55,8 +55,8 @@ describe("<ModelExample/>", function(){
       expect(node.name()).toEqual("li")
       expect(node.hasClass("tabitem")).toEqual(true)
     })
-    expect(tabs.at(0).text()).toEqual("Example Value")
-    expect(tabs.at(1).text()).toEqual("Model")
+    expect(tabs.at(0).text()).toEqual("응답")
+    expect(tabs.at(1).text()).toEqual("모델")
   })
 
   exampleSelectedTestInputs.forEach(function(testInputs) {
