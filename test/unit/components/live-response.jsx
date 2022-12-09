@@ -49,7 +49,7 @@ describe("<LiveResponse/>", function(){
       })
 
       let mutatedRequestForSpy = jest.fn().mockImplementation(function(mutatedRequest) { return mutatedRequest })
-      let requestForSpy = jest.fn().mockImplementation(function(request) { return request }) 
+      let requestForSpy = jest.fn().mockImplementation(function(request) { return request })
 
       let components = {
         curl: Curl,
@@ -57,7 +57,7 @@ describe("<LiveResponse/>", function(){
       }
 
       let props = {
-        response: response, 
+        response: response,
         specSelectors: {
           mutatedRequestFor: mutatedRequestForSpy,
           requestFor: requestForSpy,
@@ -88,14 +88,14 @@ describe("<LiveResponse/>", function(){
       expect(duration.length).toEqual(1)
       expect(duration.props().duration).toEqual(50)
       expect(duration.html())
-        .toEqual("<div><h5>Request duration</h5><pre class=\"microlight\">50 ms</pre></div>")
+        .toEqual("<div><h5>응답 소요 시간</h5><pre class=\"microlight\">50 ms</pre></div>")
 
       let responseHeaders = wrapper.find("Headers")
       expect(duration.length).toEqual(1)
       expect(responseHeaders.props().headers.length).toEqual(1)
       expect(responseHeaders.props().headers[0].key).toEqual("content-type")
       expect(responseHeaders.html())
-        .toEqual("<div><h5>Response headers</h5><pre class=\"microlight\"><span class=\"headerline\"> content-type: application/xml </span></pre></div>")
+        .toEqual("<div><h5>응답 헤더</h5><pre class=\"microlight\"><span class=\"headerline\"> content-type: application/xml </span></pre></div>")
     })
   })
 })

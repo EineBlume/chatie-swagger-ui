@@ -5,7 +5,7 @@ import ImPropTypes from "react-immutable-proptypes"
 const Headers = ( { headers } )=>{
   return (
     <div>
-      <h5>Response headers</h5>
+      <h5>응답 헤더</h5>
       <pre className="microlight">{headers}</pre>
     </div>)
 }
@@ -16,7 +16,7 @@ Headers.propTypes = {
 const Duration = ( { duration } ) => {
   return (
     <div>
-      <h5>Request duration</h5>
+      <h5>응답 소요 시간</h5>
       <pre className="microlight">{duration} ms</pre>
     </div>
   )
@@ -78,17 +78,17 @@ export default class LiveResponse extends React.Component {
           : <Curl request={ curlRequest } getConfigs={ getConfigs } />) }
         { url && <div>
             <div className="request-url">
-              <h4>Request URL</h4>
+              <h4>요청 URL</h4>
               <pre className="microlight">{url}</pre>
             </div>
           </div>
         }
-        <h4>Server response</h4>
+        <h4>서버 응답</h4>
         <table className="responses-table live-responses-table">
           <thead>
           <tr className="responses-header">
             <td className="col_header response-col_status">응답 코드</td>
-            <td className="col_header response-col_description">Details</td>
+            <td className="col_header response-col_description">상세 내용</td>
           </tr>
           </thead>
           <tbody>

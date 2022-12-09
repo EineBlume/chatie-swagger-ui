@@ -161,7 +161,7 @@ export default class ResponseBody extends React.PureComponent {
     }
 
     return ( !bodyEl ? null : <div>
-        <h5>Response body</h5>
+        <h5>응답 바디</h5>
         { bodyEl }
       </div>
     )
